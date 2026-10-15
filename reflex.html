@@ -28,10 +28,13 @@
             haltTime = undefined;
             document.getElementById("target").textContent = "Your time";
 
-            for (let i = 0; i <= 5; i++) {
+            // BONUS: Random starting count between 2 and 10
+            let startCount = Math.floor(Math.random() * 9) + 2; 
+
+            for (let i = startCount; i >= 0; i--) {
                 setTimeout(() => {
                     document.getElementById("counter").textContent = i;
-                }, (5 - i) * 1000);
+                }, (startCount - i) * 1000);
             }
 
             setTimeout(() => {
@@ -42,7 +45,7 @@
                     let elapsedTime = targetTime - haltTime;
                     document.getElementById("target").textContent = "Time was " + elapsedTime + " ms";
                 }
-            }, 5000);
+            }, startCount * 1000);
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -37,7 +37,9 @@
     <div class="mb-3">
         <button type="button" class="btn btn-success me-2" onclick="addEnd()">Add end</button>
         <button type="button" class="btn btn-primary me-2" onclick="addFront()">Add front</button>
-        <button type="button" class="btn btn-danger" onclick="removeEveryOther()">Remove</button>
+        <button type="button" class="btn btn-danger me-2" onclick="removeEveryOther()">Remove</button>
+        <!-- BONUS: Shuffle button -->
+        <button type="button" class="btn btn-warning" onclick="shuffle()">Shuffle</button>
     </div>
 
     <div id="container" class="flex-container">
@@ -80,6 +82,27 @@
                     divListItems[i].remove();
                 }
             }
+        }
+
+        // BONUS: Randomly select two elements and swap them
+        function shuffle() {
+            let divListItems = document.getElementsByClassName("divlist");
+            if (divListItems.length < 2) return;
+
+            let idx1 = Math.floor(Math.random() * divListItems.length);
+            let idx2 = Math.floor(Math.random() * divListItems.length);
+
+            while (idx1 === idx2) {
+                idx2 = Math.floor(Math.random() * divListItems.length);
+            }
+
+            let container = document.getElementById("container");
+            let item1 = divListItems[idx1];
+            let item2 = divListItems[idx2];
+
+            let tempText = item1.innerHTML;
+            item1.innerHTML = item2.innerHTML;
+            item2.innerHTML = tempText;
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

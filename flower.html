@@ -24,83 +24,42 @@
     <p id="help-button" style="cursor: pointer;" onclick="help()">Click for help.</p>
     <p id="help">Help report</p>
 
-    <!-- Part 3 & 4: 6x6 Game Field Grid (Indices 0 to 35) -->
     <div class="container my-3">
-        <!-- Row 0: 0 to 5 -->
-        <div class="row g-1 mb-1">
-            <div class="col-auto"><img id="plant-0" src="bush.jpg" class="game-img border" alt="bush" onclick="check(0)"></div>
-            <div class="col-auto"><img id="plant-1" src="bush.jpg" class="game-img border" alt="bush" onclick="check(1)"></div>
-            <div class="col-auto"><img id="plant-2" src="bush.jpg" class="game-img border" alt="bush" onclick="check(2)"></div>
-            <div class="col-auto"><img id="plant-3" src="bush.jpg" class="game-img border" alt="bush" onclick="check(3)"></div>
-            <div class="col-auto"><img id="plant-4" src="bush.jpg" class="game-img border" alt="bush" onclick="check(4)"></div>
-            <div class="col-auto"><img id="plant-5" src="bush.jpg" class="game-img border" alt="bush" onclick="check(5)"></div>
-        </div>
-        <!-- Row 1: 6 to 11 -->
-        <div class="row g-1 mb-1">
-            <div class="col-auto"><img id="plant-6" src="bush.jpg" class="game-img border" alt="bush" onclick="check(6)"></div>
-            <div class="col-auto"><img id="plant-7" src="bush.jpg" class="game-img border" alt="bush" onclick="check(7)"></div>
-            <div class="col-auto"><img id="plant-8" src="bush.jpg" class="game-img border" alt="bush" onclick="check(8)"></div>
-            <div class="col-auto"><img id="plant-9" src="bush.jpg" class="game-img border" alt="bush" onclick="check(9)"></div>
-            <div class="col-auto"><img id="plant-10" src="bush.jpg" class="game-img border" alt="bush" onclick="check(10)"></div>
-            <div class="col-auto"><img id="plant-11" src="bush.jpg" class="game-img border" alt="bush" onclick="check(11)"></div>
-        </div>
-        <!-- Row 2: 12 to 17 -->
-        <div class="row g-1 mb-1">
-            <div class="col-auto"><img id="plant-12" src="bush.jpg" class="game-img border" alt="bush" onclick="check(12)"></div>
-            <div class="col-auto"><img id="plant-13" src="bush.jpg" class="game-img border" alt="bush" onclick="check(13)"></div>
-            <div class="col-auto"><img id="plant-14" src="bush.jpg" class="game-img border" alt="bush" onclick="check(14)"></div>
-            <div class="col-auto"><img id="plant-15" src="bush.jpg" class="game-img border" alt="bush" onclick="check(15)"></div>
-            <div class="col-auto"><img id="plant-16" src="bush.jpg" class="game-img border" alt="bush" onclick="check(16)"></div>
-            <div class="col-auto"><img id="plant-17" src="bush.jpg" class="game-img border" alt="bush" onclick="check(17)"></div>
-        </div>
-        <!-- Row 3: 18 to 23 -->
-        <div class="row g-1 mb-1">
-            <div class="col-auto"><img id="plant-18" src="bush.jpg" class="game-img border" alt="bush" onclick="check(18)"></div>
-            <div class="col-auto"><img id="plant-19" src="bush.jpg" class="game-img border" alt="bush" onclick="check(19)"></div>
-            <div class="col-auto"><img id="plant-20" src="bush.jpg" class="game-img border" alt="bush" onclick="check(20)"></div>
-            <div class="col-auto"><img id="plant-21" src="bush.jpg" class="game-img border" alt="bush" onclick="check(21)"></div>
-            <div class="col-auto"><img id="plant-22" src="bush.jpg" class="game-img border" alt="bush" onclick="check(22)"></div>
-            <div class="col-auto"><img id="plant-23" src="bush.jpg" class="game-img border" alt="bush" onclick="check(23)"></div>
-        </div>
-        <!-- Row 4: 24 to 29 -->
-        <div class="row g-1 mb-1">
-            <div class="col-auto"><img id="plant-24" src="bush.jpg" class="game-img border" alt="bush" onclick="check(24)"></div>
-            <div class="col-auto"><img id="plant-25" src="bush.jpg" class="game-img border" alt="bush" onclick="check(25)"></div>
-            <div class="col-auto"><img id="plant-26" src="bush.jpg" class="game-img border" alt="bush" onclick="check(26)"></div>
-            <div class="col-auto"><img id="plant-27" src="bush.jpg" class="game-img border" alt="bush" onclick="check(27)"></div>
-            <div class="col-auto"><img id="plant-28" src="bush.jpg" class="game-img border" alt="bush" onclick="check(28)"></div>
-            <div class="col-auto"><img id="plant-29" src="bush.jpg" class="game-img border" alt="bush" onclick="check(29)"></div>
-        </div>
-        <!-- Row 5: 30 to 35 -->
-        <div class="row g-1 mb-1">
-            <div class="col-auto"><img id="plant-30" src="bush.jpg" class="game-img border" alt="bush" onclick="check(30)"></div>
-            <div class="col-auto"><img id="plant-31" src="bush.jpg" class="game-img border" alt="bush" onclick="check(31)"></div>
-            <div class="col-auto"><img id="plant-32" src="bush.jpg" class="game-img border" alt="bush" onclick="check(32)"></div>
-            <div class="col-auto"><img id="plant-33" src="bush.jpg" class="game-img border" alt="bush" onclick="check(33)"></div>
-            <div class="col-auto"><img id="plant-34" src="bush.jpg" class="game-img border" alt="bush" onclick="check(34)"></div>
-            <div class="col-auto"><img id="plant-35" src="bush.jpg" class="game-img border" alt="bush" onclick="check(35)"></div>
-        </div>
+        <!-- 6x6 Grid (0 to 35) -->
+        <script>
+            for (let r = 0; r < 6; r++) {
+                document.write('<div class="row g-1 mb-1">');
+                for (let c = 0; c < 6; c++) {
+                    let idx = r * 6 + c;
+                    document.write('<div class="col-auto"><img id="plant-' + idx + '" src="bush.jpg" class="game-img border" alt="bush" onclick="check(' + idx + ')"></div>');
+                }
+                document.write('</div>');
+            }
+        </script>
     </div>
 
     <script>
-        // Array of 36 unique IDs
-        const ids = [
-            "plant-0", "plant-1", "plant-2", "plant-3", "plant-4", "plant-5",
-            "plant-6", "plant-7", "plant-8", "plant-9", "plant-10", "plant-11",
-            "plant-12", "plant-13", "plant-14", "plant-15", "plant-16", "plant-17",
-            "plant-18", "plant-19", "plant-20", "plant-21", "plant-22", "plant-23",
-            "plant-24", "plant-25", "plant-26", "plant-27", "plant-28", "plant-29",
-            "plant-30", "plant-31", "plant-32", "plant-33", "plant-34", "plant-35"
-        ];
+        const ids = Array.from({length: 36}, (_, i) => "plant-" + i);
 
         let score = 0;
         let locationsVisited = 0;
         let lastLocation = 0;
-        let poisonLocation = 19;
-        let roseLocation = 14;
-        let lilyLocations = [3, 25];
-        let daisyLocations = [2, 5, 11, 20, 21];
         let gameOver = false;
+
+        // BONUS: Generate unique random positions (0 to 35)
+        function getRandomPositions(count) {
+            let positions = new Set();
+            while (positions.size < count) {
+                positions.add(Math.floor(Math.random() * 36));
+            }
+            return Array.from(positions);
+        }
+
+        let randoms = getRandomPositions(9);
+        let poisonLocation = randoms[0];
+        let roseLocation = randoms[1];
+        let lilyLocations = [randoms[2], randoms[3]];
+        let daisyLocations = [randoms[4], randoms[5], randoms[6], randoms[7], randoms[8]];
 
         function check(position) {
             if (gameOver) return;
@@ -129,15 +88,39 @@
             locationsVisited++;
             lastLocation = position;
 
+            // BONUS: Move rose randomly North, South, East, West
+            if (!gameOver) {
+                moveRose(position);
+            }
+
             document.getElementById("locations").textContent = "Number of locations checked is " + locationsVisited + ".";
             document.getElementById("score").textContent = "Score is " + score + ".";
+        }
+
+        function moveRose(playerPos) {
+            let row = Math.floor(roseLocation / 6);
+            let col = roseLocation % 6;
+            let validMoves = [];
+
+            if (row > 0) validMoves.push(roseLocation - 6); // North
+            if (row < 5) validMoves.push(roseLocation + 6); // South
+            if (col > 0) validMoves.push(roseLocation - 1); // West
+            if (col < 5) validMoves.push(roseLocation + 1); // East
+
+            let nextRoseLocation = validMoves[Math.floor(Math.random() * validMoves.length)];
+            roseLocation = nextRoseLocation;
+
+            // If rose lands on player location, game over
+            if (roseLocation === playerPos) {
+                gameOver = true;
+                alert("The rose moved onto your location! Game Over.");
+            }
         }
 
         function help() {
             let row = Math.floor(lastLocation / 6);
             let col = lastLocation % 6;
 
-            // 4 closest neighbors with wrap-around
             let up = (lastLocation - 6 + 36) % 36;
             let down = (lastLocation + 6) % 36;
             let left = col === 0 ? lastLocation + 5 : lastLocation - 1;
@@ -152,7 +135,6 @@
                 }
             }
 
-            // 9 closest neighbors without wrap-around
             let neighbors9 = [];
             for (let r = Math.max(0, row - 1); r <= Math.min(5, row + 1); r++) {
                 for (let c = Math.max(0, col - 1); c <= Math.min(5, col + 1); c++) {
