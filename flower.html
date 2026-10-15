@@ -21,67 +21,159 @@
     <p class="lead">Click on the locations to find the flowers, watch out for the poison ivy</p>
     <p id="locations">Number of locations checked is zero.</p>
     <p id="score">Score is zero.</p>
-    <p id="help-button">Click for help.</p>
+    <p id="help-button" style="cursor: pointer;" onclick="help()">Click for help.</p>
     <p id="help">Help report</p>
 
-    <!-- Grille 6x6 -->
+    <!-- Part 3 & 4: 6x6 Game Field Grid (Indices 0 to 35) -->
     <div class="container my-3">
-        <!-- Row 0 -->
+        <!-- Row 0: 0 to 5 -->
         <div class="row g-1 mb-1">
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
+            <div class="col-auto"><img id="plant-0" src="bush.jpg" class="game-img border" alt="bush" onclick="check(0)"></div>
+            <div class="col-auto"><img id="plant-1" src="bush.jpg" class="game-img border" alt="bush" onclick="check(1)"></div>
+            <div class="col-auto"><img id="plant-2" src="bush.jpg" class="game-img border" alt="bush" onclick="check(2)"></div>
+            <div class="col-auto"><img id="plant-3" src="bush.jpg" class="game-img border" alt="bush" onclick="check(3)"></div>
+            <div class="col-auto"><img id="plant-4" src="bush.jpg" class="game-img border" alt="bush" onclick="check(4)"></div>
+            <div class="col-auto"><img id="plant-5" src="bush.jpg" class="game-img border" alt="bush" onclick="check(5)"></div>
         </div>
-        <!-- Row 1 -->
+        <!-- Row 1: 6 to 11 -->
         <div class="row g-1 mb-1">
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
+            <div class="col-auto"><img id="plant-6" src="bush.jpg" class="game-img border" alt="bush" onclick="check(6)"></div>
+            <div class="col-auto"><img id="plant-7" src="bush.jpg" class="game-img border" alt="bush" onclick="check(7)"></div>
+            <div class="col-auto"><img id="plant-8" src="bush.jpg" class="game-img border" alt="bush" onclick="check(8)"></div>
+            <div class="col-auto"><img id="plant-9" src="bush.jpg" class="game-img border" alt="bush" onclick="check(9)"></div>
+            <div class="col-auto"><img id="plant-10" src="bush.jpg" class="game-img border" alt="bush" onclick="check(10)"></div>
+            <div class="col-auto"><img id="plant-11" src="bush.jpg" class="game-img border" alt="bush" onclick="check(11)"></div>
         </div>
-        <!-- Row 2 -->
+        <!-- Row 2: 12 to 17 -->
         <div class="row g-1 mb-1">
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
+            <div class="col-auto"><img id="plant-12" src="bush.jpg" class="game-img border" alt="bush" onclick="check(12)"></div>
+            <div class="col-auto"><img id="plant-13" src="bush.jpg" class="game-img border" alt="bush" onclick="check(13)"></div>
+            <div class="col-auto"><img id="plant-14" src="bush.jpg" class="game-img border" alt="bush" onclick="check(14)"></div>
+            <div class="col-auto"><img id="plant-15" src="bush.jpg" class="game-img border" alt="bush" onclick="check(15)"></div>
+            <div class="col-auto"><img id="plant-16" src="bush.jpg" class="game-img border" alt="bush" onclick="check(16)"></div>
+            <div class="col-auto"><img id="plant-17" src="bush.jpg" class="game-img border" alt="bush" onclick="check(17)"></div>
         </div>
-        <!-- Row 3 -->
+        <!-- Row 3: 18 to 23 -->
         <div class="row g-1 mb-1">
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
+            <div class="col-auto"><img id="plant-18" src="bush.jpg" class="game-img border" alt="bush" onclick="check(18)"></div>
+            <div class="col-auto"><img id="plant-19" src="bush.jpg" class="game-img border" alt="bush" onclick="check(19)"></div>
+            <div class="col-auto"><img id="plant-20" src="bush.jpg" class="game-img border" alt="bush" onclick="check(20)"></div>
+            <div class="col-auto"><img id="plant-21" src="bush.jpg" class="game-img border" alt="bush" onclick="check(21)"></div>
+            <div class="col-auto"><img id="plant-22" src="bush.jpg" class="game-img border" alt="bush" onclick="check(22)"></div>
+            <div class="col-auto"><img id="plant-23" src="bush.jpg" class="game-img border" alt="bush" onclick="check(23)"></div>
         </div>
-        <!-- Row 4 -->
+        <!-- Row 4: 24 to 29 -->
         <div class="row g-1 mb-1">
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
+            <div class="col-auto"><img id="plant-24" src="bush.jpg" class="game-img border" alt="bush" onclick="check(24)"></div>
+            <div class="col-auto"><img id="plant-25" src="bush.jpg" class="game-img border" alt="bush" onclick="check(25)"></div>
+            <div class="col-auto"><img id="plant-26" src="bush.jpg" class="game-img border" alt="bush" onclick="check(26)"></div>
+            <div class="col-auto"><img id="plant-27" src="bush.jpg" class="game-img border" alt="bush" onclick="check(27)"></div>
+            <div class="col-auto"><img id="plant-28" src="bush.jpg" class="game-img border" alt="bush" onclick="check(28)"></div>
+            <div class="col-auto"><img id="plant-29" src="bush.jpg" class="game-img border" alt="bush" onclick="check(29)"></div>
         </div>
-        <!-- Row 5 -->
+        <!-- Row 5: 30 to 35 -->
         <div class="row g-1 mb-1">
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
-            <div class="col-auto"><img src="bush.jpg" class="game-img border" alt="bush"></div>
+            <div class="col-auto"><img id="plant-30" src="bush.jpg" class="game-img border" alt="bush" onclick="check(30)"></div>
+            <div class="col-auto"><img id="plant-31" src="bush.jpg" class="game-img border" alt="bush" onclick="check(31)"></div>
+            <div class="col-auto"><img id="plant-32" src="bush.jpg" class="game-img border" alt="bush" onclick="check(32)"></div>
+            <div class="col-auto"><img id="plant-33" src="bush.jpg" class="game-img border" alt="bush" onclick="check(33)"></div>
+            <div class="col-auto"><img id="plant-34" src="bush.jpg" class="game-img border" alt="bush" onclick="check(34)"></div>
+            <div class="col-auto"><img id="plant-35" src="bush.jpg" class="game-img border" alt="bush" onclick="check(35)"></div>
         </div>
     </div>
 
+    <script>
+        // Array of 36 unique IDs
+        const ids = [
+            "plant-0", "plant-1", "plant-2", "plant-3", "plant-4", "plant-5",
+            "plant-6", "plant-7", "plant-8", "plant-9", "plant-10", "plant-11",
+            "plant-12", "plant-13", "plant-14", "plant-15", "plant-16", "plant-17",
+            "plant-18", "plant-19", "plant-20", "plant-21", "plant-22", "plant-23",
+            "plant-24", "plant-25", "plant-26", "plant-27", "plant-28", "plant-29",
+            "plant-30", "plant-31", "plant-32", "plant-33", "plant-34", "plant-35"
+        ];
+
+        let score = 0;
+        let locationsVisited = 0;
+        let lastLocation = 0;
+        let poisonLocation = 19;
+        let roseLocation = 14;
+        let lilyLocations = [3, 25];
+        let daisyLocations = [2, 5, 11, 20, 21];
+        let gameOver = false;
+
+        function check(position) {
+            if (gameOver) return;
+
+            let imgId = ids[position];
+            let imgElement = document.getElementById(imgId);
+
+            if (position === poisonLocation) {
+                imgElement.src = "ivy.jpg";
+                gameOver = true;
+                score -= 4;
+            } else if (position === roseLocation) {
+                imgElement.src = "rose.jpg";
+                score += 4;
+            } else if (lilyLocations.includes(position)) {
+                imgElement.src = "lily.jpg";
+                score += 2;
+            } else if (daisyLocations.includes(position)) {
+                imgElement.src = "daisy.jpg";
+                score += 1;
+            } else {
+                imgElement.src = "ivy.jpg";
+            }
+
+            imgElement.onclick = null;
+            locationsVisited++;
+            lastLocation = position;
+
+            document.getElementById("locations").textContent = "Number of locations checked is " + locationsVisited + ".";
+            document.getElementById("score").textContent = "Score is " + score + ".";
+        }
+
+        function help() {
+            let row = Math.floor(lastLocation / 6);
+            let col = lastLocation % 6;
+
+            // 4 closest neighbors with wrap-around
+            let up = (lastLocation - 6 + 36) % 36;
+            let down = (lastLocation + 6) % 36;
+            let left = col === 0 ? lastLocation + 5 : lastLocation - 1;
+            let right = col === 5 ? lastLocation - 5 : lastLocation + 1;
+
+            let neighbors4 = [up, down, left, right];
+
+            for (let loc of neighbors4) {
+                if (daisyLocations.includes(loc)) {
+                    document.getElementById("help").textContent = "cold";
+                    return "cold";
+                }
+            }
+
+            // 9 closest neighbors without wrap-around
+            let neighbors9 = [];
+            for (let r = Math.max(0, row - 1); r <= Math.min(5, row + 1); r++) {
+                for (let c = Math.max(0, col - 1); c <= Math.min(5, col + 1); c++) {
+                    neighbors9.push(r * 6 + c);
+                }
+            }
+
+            if (neighbors9.includes(roseLocation)) {
+                document.getElementById("help").textContent = "hot";
+                return "hot";
+            }
+
+            if (neighbors9.includes(poisonLocation)) {
+                document.getElementById("help").textContent = "watch out";
+                return "watch out";
+            }
+
+            document.getElementById("help").textContent = "warm";
+            return "warm";
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
